@@ -53,5 +53,12 @@ namespace BootstrapFileInput_Demo.Controllers
             }
         }
 
+
+        public JsonResult DeleteFile()
+        {
+            var r = Request;
+            return Json(new { });
+        }
+
     }
 }

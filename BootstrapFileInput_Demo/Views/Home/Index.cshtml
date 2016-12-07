@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2 class="text-center">Bootstrap FileInput Demo</h2>
+<h4 class="text-right"><a href="Documentation">API</a></h4> 
 <hr />
 <div class="panel-group" id="accordion">
     <div class="panel panel-default">
@@ -95,7 +96,7 @@
                 文件夹上传
             </a>
         </div>
-        <div id="folder" class="panel-collapse collapse in">
+        <div id="folder" class="panel-collapse collapse">
             <div class="panel-body">
                 <div class="alert alert-info" role="alert">上传文件夹里单个文件</div>
                 <input id="input-folder-1" type="file" class="file-loading" webkitdirectory>
@@ -107,15 +108,197 @@
             </div>
         </div>
     </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#multiLanguage ">
+                多语言
+            </a>
+        </div>
+        <div id="multiLanguage" class="panel-collapse collapse ">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">设置为中文</div>
+                <input id="input-pt-br" name="inputptbr[]" type="file" multiple class="file-loading">
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#theming">
+                主题
+            </a>
+        </div>
+        <div id="theming" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">Font Awesome Theme</div>
+                <input id="input-fa" name="inputfa[]" type="file" multiple class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">Glyphicons Theme</div>
+                <input id="input-gly" name="inputgly[]" type="file" multiple class="file-loading">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#previewManagement ">
+                预览管理
+            </a>
+        </div>
+        <div id="previewManagement" class="panel-collapse collapse ">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">初始化预览数据</div>
+                <input id="input-pd" name="input-pd[]" type="file" multiple class="file-loading">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#filePreviewIcons  ">
+                文件预览图标
+            </a>
+        </div>
+        <div id="filePreviewIcons" class="panel-collapse collapse ">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">禁用预览所有文件类型的内容,而是显示文件类型图标。</div>
+                <input id="input-ficons-1" name="inputficons1[]" multiple type="file" class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">显示文件类型，部分显示内容</div>
+                <input id="input-ficons-3" name="inputficons3[]" multiple type="file" class="file-loading">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#imageDimensions   ">
+                图像尺寸
+            </a>
+        </div>
+        <div id="imageDimensions" class="panel-collapse collapse ">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">设置选择上传的图像的最小高度宽度</div>
+                <input id="input-dim-1" name="inputdim1[]" type="file" multiple class="file-loading" accept="image/*">
+                <hr />
+                <div class="alert alert-info" role="alert">设置选择上传的图像的最大高度宽度</div>
+                <input id="input-dim-2" name="inputdim2[]" type="file" multiple class="file-loading" accept="image/*">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#imageManagement   ">
+                图像管理
+            </a>
+        </div>
+        <div id="imageManagement" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">图像调整大小（宽度）</div>
+                <input id="input-image-1" name="input-image" type="file" class="file-loading" accept="image/*">
+                <hr />
+                <div id="kv-success-modal" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">Yippee!</h4>
+                            </div>
+                            <div id="kv-success-box" class="modal-body">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#autoReplaceFiles">
+                自动替换文件
+            </a>
+        </div>
+        <div id="autoReplaceFiles" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">限制一个文件</div>
+                <input id="input-repl-1" type="file" class="file-loading" accept="image/*">
+                <hr />
+                <div class="alert alert-info" role="alert">限制一个文件（备用）</div>
+                <input id="input-repl-1a" type="file" class="file-loading" accept="image/*">
+                <hr />
+                <div class="alert alert-info" role="alert">多个文件的限制</div>
+                <input id="input-repl-2" name="inputrepl2[]" type="file" class="file-loading" accept="image/*" multiple>
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#fileCountValidation ">
+                文件数量验证
+            </a>
+        </div>
+        <div id="fileCountValidation" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">最大文件数量</div>
+                <input id="input-fcount-1" name="inputfcount1[]" multiple type="file" class="file-loading" accept="image/*">
+                <hr />
+                <div class="alert alert-info" role="alert">最小文件数量</div>
+                <input id="input-fcount-2" name="inputfcount2[]" multiple type="file" class="file-loading" accept="image/*">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#pluginMethods ">
+                插件方法
+            </a>
+        </div>
+        <div id="pluginMethods" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">操作方法</div>
+                <input id="file-4" name="file-4[]" type="file" multiple>
+                <hr>
+                <button class="btn btn-default btn-disable" type="button">禁用</button>
+                <button class="btn btn-danger btn-destroy" type="button">销毁</button>
+                <button class="btn btn-success btn-recreate" type="button">重现</button>
+                <button class="btn btn-info btn-refresh" type="button">刷新</button>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <script>
     $(function () {
-        var uploadUrl = "Home/Upload";
+        var uploadUrl = "/Home/Upload";
         //通过JS初始化插件，隐藏插件的宽度和按钮
-        $("#input-4").fileinput({ showCaption: false });
+        $("#input-4").fileinput({
+            language: "zh",
+            showCaption: false
+        });
         //
         $("#input-6").fileinput({
+            language: "zh",
             showUpload: false, //是否显示上传按钮
             maxFileCount: 3, //最多选择几个文件
             mainClass: "input-group-lg" //主要样式
@@ -124,6 +307,7 @@
         //高级用法
         //设置选择上传文件的大小和设置初始预览
         $("#input-24").fileinput({
+            language: "zh",
             uploadUrl: uploadUrl, //上传地址
             initialPreview: [    //初始默认预览信息
                 '/Uploads/default1.jpg',
@@ -134,13 +318,14 @@
                 { caption: "Moon.jpg", size: 930321, width: "120px", key: 1 },
                 { caption: "Earth.jpg", size: 1218822, width: "120px", key: 2 }
             ],
-            deleteUrl: "/site/file-delete",
+            deleteUrl: "/Home/DeleteFile",
             overwriteInitial: false,
             maxFileSize: 1000,
             initialCaption: "The Moon and the Earth"
         });
         //设置初始预览，并上传覆盖
         $("#input-25").fileinput({
+            language: "zh",
             uploadUrl: uploadUrl,
             initialPreview: [
                  '/Uploads/default1.jpg',
@@ -151,12 +336,13 @@
                 { caption: "Moon.jpg", size: 930321, width: "120px", key: 1, showDelete: false },
                 { caption: "Earth.jpg", size: 1218822, width: "120px", key: 2, showZoom: false }
             ],
-            deleteUrl: "/site/file-delete",
+            deleteUrl: "/Home/DeleteFile",
             overwriteInitial: true,
             initialCaption: "The Moon and the Earth"
         });
         //显示控件为一个单独的按钮
         $("#input-20").fileinput({
+            language: "zh",
             browseClass: "btn btn-primary btn-block",
             showCaption: false,
             showRemove: false,
@@ -164,6 +350,7 @@
         });
         //只选择图片，自定义按钮样式
         $("#input-21").fileinput({
+            language: "zh",
             previewFileType: "image", //预览文件类型
             browseClass: "btn btn-success", //选择按钮样式
             browseLabel: "Pick Image", //选择按钮文字
@@ -177,12 +364,14 @@
         });
         //更改预览背景，并允许只用于选择和预览的文本文件
         $("#input-22").fileinput({
+            language: "zh",
             previewFileType: "text",
             allowedFileExtensions: ["txt", "md", "ini", "text"],
             previewClass: "bg-warning"
         });
         //使用模板的高级定制。例如，从右到左按钮的位置改变。
         $("#input-23").fileinput({
+            language: "zh",
             showUpload: false,
             layoutTemplates: {
                 main1: "{preview}\n" +
@@ -218,17 +407,20 @@
         });
         //限定文件扩展名
         $("#input-42").fileinput({
+            language: "zh",
             maxFileCount: 10,
             allowedFileExtensions: ["jpg", "gif", "png", "txt"]
         });
         //禁用预览和自定义自己的错误容器和消息
         $("#input-43").fileinput({
+            language: "zh",
             showPreview: false,
             allowedFileExtensions: ["zip", "rar", "gz", "tgz"],
             elErrorContainer: "#errorBlock"
         });
         //控制最大预览文件大小
         $("#input-44").fileinput({
+            language: "zh",
             uploadUrl: uploadUrl,
             maxFilePreviewSize: 10240
         });
@@ -236,11 +428,13 @@
         //文件夹上传
         //上传文件夹里单个文件
         $("#input-folder-1").fileinput({
-            browseLabel: 'Select Folder...'
+            language: "zh",
+            browseLabel: '选择文件夹...'
         });
         //上传文件夹里多个文件
         $("#input-folder-2").fileinput({
-            browseLabel: 'Select Folder...',
+            language: "zh",
+            browseLabel: '选择文件夹...',
             previewFileIcon: '<i class="fa fa-file"></i>',
             allowedPreviewTypes: null, // set to empty, null or false to disable preview for all types
             previewFileIconSettings: {
@@ -284,6 +478,271 @@
                     return ext.match(/(mp3|wav)$/i);
                 },
             }
+        });
+
+        //设置语言
+        $("#input-pt-br").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+
+        //主题
+        //Font Awesome Theme
+        $("#input-fa").fileinput({
+            language: "zh",
+            theme: "fa",
+            uploadUrl: uploadUrl
+        });
+        //Glyphicons Theme
+        $("#input-gly").fileinput({
+            language: "zh",
+            theme: "gly",
+            uploadUrl: uploadUrl
+        });
+
+        //初始化预览数据
+        $("#input-pd").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl, //上传路径
+            uploadAsync: false, //同步上传
+            minFileCount: 2,  //最少选择上传的个数
+            maxFileCount: 5, //最多选择上传的个数
+            overwriteInitial: false,//是否覆盖默认数据
+            initialPreview: [  //初始化预览
+                // 图片数据
+               '/Uploads/default1.jpg',
+               '/Uploads/default2.jpg',
+                // 视频数据
+                "/Uploads//small.mp4",
+                // PDF 数据
+                '/Uploads/AsynWait.pdf',
+                // 文本数据
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut mauris ut libero fermentum feugiat eu et dui. Mauris condimentum rhoncus enim, sed semper neque vestibulum id. Nulla semper, turpis ut consequat imperdiet, enim turpis aliquet orci, eget venenatis elit sapien non ante. Aliquam neque ipsum, rhoncus id ipsum et, volutpat tincidunt augue. Maecenas dolor libero, gravida nec est at, commodo tempor massa. Sed id feugiat massa. Pellentesque at est eu ante aliquam viverra ac sed est.",
+                // HTML数据
+                '<div class="text-center">' +
+                '<h3>Lorem Ipsum</h3>' +
+                '<p><em>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</em></p>' +
+                '<h5><small>"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</small></h5>' +
+                '<hr>' +
+                '</div>' +
+                '<div class="text-justify">' +
+                '<p>' +
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis convallis dolor sed dignissim. Phasellus euismod mauris vel dolor maximus, sed fermentum mauris lobortis. Aliquam luctus, diam in luctus egestas, magna lacus luctus libero, scelerisque mattis ante dolor ac nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse varius orci ultricies massa euismod, at semper turpis fermentum. Quisque vitae augue vel lectus viverra facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla lacinia molestie diam, et volutpat nunc bibendum a. Cras a est sed augue commodo accumsan quis vitae nisi.' +
+                '</p>' +
+                '<p>' +
+                'Nunc sit amet metus et dui aliquet feugiat. Praesent lobortis, ipsum et elementum dignissim, urna libero fringilla justo, at tincidunt nisi mi sed mi. Integer vel est porttitor, tempor tortor non, lobortis felis. Curabitur porttitor nisi et volutpat iaculis. Fusce nec feugiat lectus, vitae ullamcorper lorem. Ut ultrices nunc imperdiet placerat malesuada. Proin commodo erat in egestas maximus.' +
+                '</p>'
+            ],
+            initialPreviewAsData: true, // 确定是否只发送预览数据，而不是原始标记
+            initialPreviewFileType: 'image', // image是默认的可以重写
+            initialPreviewConfig: [ //初始化预览配置
+                { caption: "Desert.jpg", size: 827000, width: "120px", url: uploadUrl, key: 1 },
+                { caption: "Lighthouse.jpg", size: 549000, width: "120px", url: uploadUrl, key: 2 },
+                { type: "video", size: 375000, filetype: "video/mp4", caption: "KrajeeSample.mp4", url: uploadUrl, key: 3 },
+                { type: "pdf", size: 8000, caption: "About.pdf", url: uploadUrl, key: 4 },
+                { type: "text", size: 1430, caption: "LoremIpsum.txt", url: uploadUrl, key: 5 },
+                { type: "html", size: 3550, caption: "LoremIpsum.html", url: uploadUrl, key: 6 }
+            ],
+            purifyHtml: true, // 默认的HTML数据预览净化
+            uploadExtraData: { //上传额外的数据
+                img_key: "1000",
+                img_keywords: "happy, places",
+            }
+        }).on('filesorted', function (e, params) {
+            console.log('File sorted params', params);
+        }).on('fileuploaded', function (e, params) {
+            console.log('File uploaded params', params);
+        });
+
+        //禁用预览所有文件类型的内容,而是显示文件类型图标
+        $("#input-ficons-1").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            uploadAsync: true,
+            previewFileIcon: '<i class="fa fa-file"></i>',
+            allowedPreviewTypes: null, // 设置 empty、null、false禁用所有类型的预览
+            previewFileIconSettings: {
+                'docx': '<i class="fa fa-file-word-o text-primary"></i>',
+                'xlsx': '<i class="fa fa-file-excel-o text-success"></i>',
+                'pptx': '<i class="fa fa-file-powerpoint-o text-danger"></i>',
+                'jpg': '<i class="fa fa-file-photo-o text-warning"></i>',
+                'pdf': '<i class="fa fa-file-pdf-o text-danger"></i>',
+                'zip': '<i class="fa fa-file-archive-o text-muted"></i>',
+            }
+        });
+        //显示文件类型，部分显示内容
+        $("#input-ficons-3").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            previewFileIcon: '<i class="fa fa-file"></i>',
+            allowedPreviewTypes: ['image', 'text'], // 允许预览图片和文字
+            previewFileIconSettings: {
+                'docx': '<i class="fa fa-file-word-o text-primary"></i>',
+                'xlsx': '<i class="fa fa-file-excel-o text-success"></i>',
+                'pptx': '<i class="fa fa-file-powerpoint-o text-danger"></i>',
+                'pdf': '<i class="fa fa-file-pdf-o text-danger"></i>',
+                'zip': '<i class="fa fa-file-archive-o text-muted"></i>',
+            }
+        });
+
+        //设置选择上传的图像的最小高度宽度
+        $("#input-dim-1").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            allowedFileExtensions: ["jpg", "png", "gif"],
+            minImageWidth: 50,
+            minImageHeight: 50
+        });
+        //设置选择上传的图像的最大高度宽度
+        $("#input-dim-2").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            allowedFileExtensions: ["jpg", "png", "gif"],
+            maxImageWidth: 250,
+            maxImageHeight: 250
+        });
+
+        //图像调整大小（宽度）
+        $("#input-image-1").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            allowedFileExtensions: ["jpg", "png", "gif"],
+            maxImageWidth: 200,
+            maxFileCount: 1,
+            resizeImage: true
+        }).on('filepreupload', function () {
+            $('#kv-success-box').html('');
+        }).on('fileuploaded', function (event, data) {
+            $('#kv-success-box').append(data.response.link);
+            $('#kv-success-modal').modal('show');
+        });
+
+        //限制一个文件
+        $("#input-repl-1").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            autoReplace: true,
+            maxFileCount: 1,
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+        //限制一个文件（备用）
+        $("#input-repl-1a").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            autoReplace: true,
+            overwriteInitial: true,
+            showUploadedThumbs: false,
+            maxFileCount: 1,
+            initialPreview: [
+                "<img style='height:160px' src='/Uploads/default1.jpg'>",
+            ],
+            initialCaption: 'Initial-Image.jpg',
+            initialPreviewShowDelete: false,
+            showRemove: true,
+            showClose: false,
+            layoutTemplates: { actionDelete: '' }, // disable thumbnail deletion
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+        //多个文件的限制
+        $("#input-repl-2").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            autoReplace: true,
+            maxFileCount: 5,
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+
+        //最大文件数量
+        $("#input-fcount-1").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            maxFileCount: 4,
+            validateInitialCount: true, //是否包含初始化数量
+            overwriteInitial: false,
+            initialPreview: [
+                "<img style='height:160px' src='/Uploads/default1.jpg'>",
+                "<img style='height:160px' src='/Uploads/default1.jpg'>",
+                "<img style='height:160px' src='/Uploads/default2.jpg'>",
+            ],
+            initialPreviewConfig: [
+                { caption: "Nature-1.jpg", size: 628782, width: "120px", url: "/Home/DeleteFile", key: 1 },
+                { caption: "Nature-2.jpg", size: 982873, width: "120px", url: "/Home/DeleteFile", key: 2 },
+                { caption: "Nature-3.jpg", size: 567728, width: "120px", url: "/Home/DeleteFile", key: 3 },
+            ],
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+        //最小文件数量
+        $("#input-fcount-2").fileinput({
+            language: "zh",
+            uploadUrl: uploadUrl,
+            minFileCount: 2,
+            validateInitialCount: true,
+            overwriteInitial: false,
+            initialPreview: [
+                "<img style='height:160px' src='/Uploads/default1.jpg'>",
+                "<img style='height:160px' src='/Uploads/default2.jpg'>",
+            ],
+            initialPreviewConfig: [
+                { caption: "City-1.jpg", size: 823677, width: "120px", url: "/Home/DeleteFile", key: 1 },
+                { caption: "City-2.jpg", size: 926367, width: "120px", url: "/Home/DeleteFile", key: 2 },
+            ],
+            allowedFileExtensions: ["jpg", "png", "gif"]
+        });
+
+
+        //插件方法
+        //操作方法
+        var $el = $('#file-4'), initPlugin = function () {
+            $el.fileinput({
+                uploadUrl: uploadUrl,
+                uploadExtraData: { kvId: '10' },
+                dropZoneEnabled: false,
+            }).off('filepreupload').on('filepreupload', function () {
+                alert("Initial pre-upload message!");
+            });
+        };
+
+        initPlugin();
+        $(".btn-disable").on('click', function () {
+            var $btn = $(this);
+            if (!$el.data('fileinput')) {
+                initPlugin();
+                $el.trigger('change');
+            }
+            if ($el.attr('disabled')) {
+                $el.fileinput('enable');
+                $btn.html('Disable').removeClass('btn-primary').addClass('btn-default');
+            } else {
+                $el.fileinput('disable');
+                $btn.html('Enable').removeClass('btn-default').addClass('btn-primary');
+            }
+        });
+
+        // `destroy` method
+        $(".btn-destroy").on('click', function () {
+            if ($el.data('fileinput')) {
+                $el.fileinput('destroy');
+            }
+        });
+
+        // recreate plugin after destroy
+        $(".btn-recreate").on('click', function () {
+            if ($el.data('fileinput')) {
+                return;
+            }
+            initPlugin();
+            if ($el.val()) {
+                $el.trigger('change');
+            }
+        });
+
+        // refresh plugin with new options 
+        $(".btn-refresh").on('click', function () {
+            $el.fileinput('refresh', { previewClass: 'bg-info' })
+                .off('fileuploaded').on('fileuploaded', function () {
+                    alert("An additional upload completion message (only received after plugin refresh).");
+                });
         });
     });
 
