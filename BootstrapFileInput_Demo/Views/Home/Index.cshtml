@@ -1,0 +1,216 @@
+﻿@{
+    ViewBag.Title = "Demo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 class="text-center">Bootstrap FileInput Demo</h2>
+<hr />
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+                href="#base">基本上传
+            </a>
+        </div>
+        <div id="base" class="panel-collapse collapse ">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">基本实例</div>
+                <input id="input-1" type="file" class="file">
+                <hr />
+                <div class="alert alert-info" role="alert">隐藏文件预览</div>
+                <input id="input-1a" type="file" class="file" data-show-preview="false">
+                <hr />
+                <div class="alert alert-info" role="alert">隐藏上传按钮</div>
+                <input id="input-2" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true">
+                <hr />
+                <div class="alert alert-info" role="alert">禁用</div>
+                <input id="input-3b" type="file" class="file" disabled="disabled">
+                <hr />
+                <div class="alert alert-info" role="alert">通过JS初始化插件，隐藏插件的宽度和按钮</div>
+                <input id="input-4" name="input4[]" type="file" multiple class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">设置控件大小，并设置允许一次选择上传的最大数量为3</div>
+                <input id="input-6" name="input6[]" type="file" multiple class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">设置扩展过滤</div>
+                <input id="input-7" name="input7[]" multiple type="file" class="file file-loading" data-allowed-file-extensions='["csv", "txt"]'>
+                <hr />
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+                href="#advanced">高级用法
+            </a>
+        </div>
+        <div id="advanced" class="panel-collapse collapse in">
+            <div class="panel-body">
+                <div class="alert alert-info" role="alert">设置选择上传文件的大小和设置初始预览</div>
+                <input id="input-24" name="input24[]" type="file" multiple class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">设置初始预览，并上传覆盖</div>
+                <input id="input-25" name="input25[]" type="file" multiple class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">显示控件为一个单独的按钮</div>
+                <input id="input-20" type="file" class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">只选择图片，自定义按钮样式</div>
+                <input id="input-21" type="file" accept="image/*" class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">更改预览背景，并允许只用于选择和预览的文本文件。</div>
+                <input id="input-22" name="input22[]" type="file" class="file-loading" accept="text/plain" multiple>
+                <hr />
+                <div class="alert alert-info" role="alert">使用模板的高级定制。例如，从右到左按钮的位置改变。</div>
+                <input id="input-23" name="input23[]" type="file" multiple class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">使用插件方法在运行时改变输入。例如，单击“修改”按钮来禁用插件和更改插件选项。</div>
+                <input id="input-40" name="input40[]" type="file" class="file" multiple>
+                <br />
+                <button type="button" class="btn btn-warning btn-modify">修改</button>
+                <hr />
+                <div class="alert alert-info" role="alert">使用allowedFileTypes限制文件类型</div>
+                <input id="input-41" name="input41[]" type="file" multiple class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">只允许特定文件扩展名</div>
+                <input id="input-42" name="input42[]" type="file" multiple class="file-loading">
+                <hr />
+                <div class="alert alert-info" role="alert">禁用预览和自定义自己的错误容器和消息。</div>
+                <input id="input-43" name="input43[]" type="file" multiple class="file-loading">
+                <div id="errorBlock" class="help-block"></div>
+                <hr />
+                <div class="alert alert-info" role="alert">控制最大预览文件大小。</div>
+               <input id="input-44" name="input44[]" type="file" multiple class="file-loading">
+                <hr />
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    $(function () {
+        var uploadUrl = "Home/Upload";
+        //通过JS初始化插件，隐藏插件的宽度和按钮
+        $("#input-4").fileinput({ showCaption: false });
+        //
+        $("#input-6").fileinput({
+            showUpload: false, //是否显示上传按钮
+            maxFileCount: 3, //最多选择几个文件
+            mainClass: "input-group-lg" //主要样式
+        });
+
+        //高级用法
+        //设置选择上传文件的大小和设置初始预览
+        $("#input-24").fileinput({
+            uploadUrl: uploadUrl, //上传地址
+            initialPreview: [    //初始默认预览信息
+                '/Uploads/default1.jpg',
+                '/Uploads/default2.jpg'
+            ],
+            initialPreviewAsData: true,
+            initialPreviewConfig: [
+                { caption: "Moon.jpg", size: 930321, width: "120px", key: 1 },
+                { caption: "Earth.jpg", size: 1218822, width: "120px", key: 2 }
+            ],
+            deleteUrl: "/site/file-delete",
+            overwriteInitial: false,
+            maxFileSize: 1000,
+            initialCaption: "The Moon and the Earth"
+        });
+        //设置初始预览，并上传覆盖
+        $("#input-25").fileinput({
+            uploadUrl: uploadUrl,
+            initialPreview: [
+                 '/Uploads/default1.jpg',
+               '/Uploads/default2.jpg'
+            ],
+            initialPreviewAsData: true,
+            initialPreviewConfig: [
+                { caption: "Moon.jpg", size: 930321, width: "120px", key: 1, showDelete: false },
+                { caption: "Earth.jpg", size: 1218822, width: "120px", key: 2, showZoom: false }
+            ],
+            deleteUrl: "/site/file-delete",
+            overwriteInitial: true,
+            initialCaption: "The Moon and the Earth"
+        });
+        //显示控件为一个单独的按钮
+        $("#input-20").fileinput({
+            browseClass: "btn btn-primary btn-block",
+            showCaption: false,
+            showRemove: false,
+            showUpload: false
+        });
+        //只选择图片，自定义按钮样式
+        $("#input-21").fileinput({
+            previewFileType: "image", //预览文件类型
+            browseClass: "btn btn-success", //选择按钮样式
+            browseLabel: "Pick Image", //选择按钮文字
+            browseIcon: "<i class=\"glyphicon glyphicon-picture\"></i> ", //选择按钮比图标
+            removeClass: "btn btn-danger", //移除按钮样式
+            removeLabel: "Delete", //移除按钮文字
+            removeIcon: "<i class=\"glyphicon glyphicon-trash\"></i> ", //移除按钮图标
+            uploadClass: "btn btn-info", //上传按钮样式
+            uploadLabel: "Upload", //上传按钮文字
+            uploadIcon: "<i class=\"glyphicon glyphicon-upload\"></i> " //上传按钮图标
+        });
+        //更改预览背景，并允许只用于选择和预览的文本文件
+        $("#input-22").fileinput({
+            previewFileType: "text",
+            allowedFileExtensions: ["txt", "md", "ini", "text"],
+            previewClass: "bg-warning"
+        });
+
+        //使用模板的高级定制。例如，从右到左按钮的位置改变。
+        $("#input-23").fileinput({
+            showUpload: false,
+            layoutTemplates: {
+                main1: "{preview}\n" +
+                "<div class=\'input-group {class}\'>\n" +
+                "   <div class=\'input-group-btn\'>\n" +
+                "       {browse}\n" +
+                "       {upload}\n" +
+                "       {remove}\n" +
+                "   </div>\n" +
+                "   {caption}\n" +
+                "</div>"
+            }
+        });
+        //使用插件方法在运行时改变输入。例如，单击“修改”按钮来禁用插件和更改插件选项
+        $(".btn-modify").on("click", function () {
+            var $btn = $(this), $input = $("#input-40");
+            if ($btn.text() == "修改") {
+                $("#input-40").fileinput("disable").fileinput("refresh", { showUpload: false });
+                $btn.html("还原");
+                alert("禁用上传控件和按钮");
+            }
+            else {
+                $("#input-40").fileinput("enable").fileinput("refresh", { showUpload: true });
+                $btn.html("修改");
+                alert("起用上传控件和按钮");
+            }
+        });
+        //使用allowedFileTypes限制文件类型
+        $("#input-41").fileinput({
+            language: 'zh',
+            maxFileCount: 10,
+            allowedFileTypes: ["image", "video"]
+        });
+        //限定文件扩展名
+        $("#input-42").fileinput({
+            maxFileCount: 10,
+            allowedFileExtensions: ["jpg", "gif", "png", "txt"]
+        });
+        //禁用预览和自定义自己的错误容器和消息
+        $("#input-43").fileinput({
+            showPreview: false,
+            allowedFileExtensions: ["zip", "rar", "gz", "tgz"],
+            elErrorContainer: "#errorBlock"
+        });
+        //控制最大预览文件大小
+        $("#input-44").fileinput({
+            uploadUrl: uploadUrl,
+            maxFilePreviewSize: 10240
+        });
+    });
+</script>

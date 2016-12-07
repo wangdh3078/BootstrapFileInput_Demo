@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "API";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h3 class="text-center">标签参数</h3>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>名称</th>
+            <th>标签</th>
+            <th>类型</th>
+            <th>默认</th>
+            <th>描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>showPreview</td>
+            <td>data-show-preview</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>设置为 false 不显示预览图</td>
+        </tr>
+        <tr>
+            <td>showUpload</td>
+            <td>data-show-upload</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>设置为 false 不显示上传按钮</td>
+        </tr>
+        <tr>
+            <td>showCaption</td>
+            <td>data-show-caption</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>设置为 false 不显示标题</td>
+        </tr>
+        <tr>
+            <td>allowedFileExtensions</td>
+            <td>data-allowed-file-extensions</td>
+            <td>Array</td>
+            <td>[ ]</td>
+            <td>数组中设置文件后缀名过滤文件，例如：["png", "jpg"]只可以选择上传png或jpg结尾的文件</td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<h3 class="text-center">属性</h3>
+<p>使用方法的语法：<code>  $("#input").fileinput({showUpload: false});</code>。</p>
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>名称</th>
+            <th>参数</th>
+            <th>默认</th>
+            <th>描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>showUpload</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>是否显示上传按钮，false不显示上传按钮</td>
+        </tr>
+        <tr>
+            <td>overwriteInitial</td>
+            <td>Boolean</td>
+            <td>true</td>
+            <td>是否覆盖初始预览，false不覆盖</td>
+        </tr>
+        <tr>
+            <td>uploadUrl</td>
+            <td>String</td>
+            <td>-</td>
+            <td>上传路径</td>
+        </tr>
+        <tr>
+            <td>initialCaption</td>
+            <td>String</td>
+            <td>-</td>
+            <td>输入框中的显示文字</td>
+        </tr>
+         <tr>
+            <td>maxFilePreviewSize</td>
+            <td>int</td>
+            <td>25600 KB（25 MB）</td>
+            <td>设置最大预览文件大小</td>
+        </tr>
+    </tbody>
+</table>
